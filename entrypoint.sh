@@ -25,10 +25,10 @@ if [ "$INPUT_FORCE" == "true" ]; then
 fi
 
 # Resolve downstream branch.
-# If not set then use the event github ref, if the ref isn't set default to master.
+# If not set then use the event github ref, if the ref isn't set default to main.
 if [ "$INPUT_BRANCH" == "" ]; then
 	if [ -z "$GITHUB_REF" ] || [ "$GITHUB_REF" == "" ]; then
-		INPUT_BRANCH="master"
+		INPUT_BRANCH="main"
 	else
 		INPUT_BRANCH="$GITHUB_REF"
 	fi
